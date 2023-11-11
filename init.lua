@@ -96,6 +96,10 @@ require('lazy').setup({
   },
 
   {
+    'github/copilot.vim'
+  },
+
+  {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
     dependencies = {
@@ -278,6 +282,17 @@ vim.o.termguicolors = true
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+
+-- i: only map the keybind to insert mode
+-- <C-Enter>: execute on ctrl+Enter
+-- copilot#Accept("<CR>") function to execute,
+--      argument is inserted if no suggestion found
+-- options:
+--  - silent:
+--      execute function without logging it in the command bar at the bottom
+vim.g.copilot_no_tab_map = true
+vim.keymap.set("i", "<C-Enter>", "copilot#Accept('<CR>')", { silent = true, expr = true })
+
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
