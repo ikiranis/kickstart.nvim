@@ -240,6 +240,9 @@ require('lazy').setup({
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+-- Relative line numbers
+vim.wo.relativenumber = true
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
