@@ -240,7 +240,6 @@ require('lazy').setup({
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
--- Relative line numbers
 vim.wo.relativenumber = true
 
 -- Set highlight on search
@@ -294,7 +293,7 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 --  - silent:
 --      execute function without logging it in the command bar at the bottom
 vim.g.copilot_no_tab_map = true
-vim.keymap.set("i", "<C-Enter>", "copilot#Accept('<CR>')", { silent = true, expr = true })
+vim.keymap.set("i", "<A-Enter>", 'copilot#Accept()', { silent = true, expr = true } )
 
 
 -- Remap for dealing with word wrap
